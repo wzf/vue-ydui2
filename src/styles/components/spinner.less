@@ -1,0 +1,77 @@
+@import "../common/variables";
+@import "../common/mixins";
+
+.@{css-prefix} {
+  &-spinner {
+    border-radius: 1px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    > span {
+      float: left;
+      width: 25%;
+      height: 100%;
+      text-align: center;
+      font-weight: bold;
+      color: #666;
+      letter-spacing: 0;
+      position: relative;
+      overflow: hidden;
+      .tap-color(#FAFAFA, .95);
+      > i:after {
+        font-family: @iconfont-inlay;
+        color: #777;
+        font-size: .16rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-45%, -40%);
+      }
+      &:last-child > i:after {
+        content: '\E602';
+      }
+      &:first-child > i:after {
+        content: '\E60B';
+      }
+    }
+    > input {
+      letter-spacing: 0;
+      float: left;
+      height: inherit;
+      text-align: center;
+      color: #666;
+      border: none;
+      font-size: .26rem;
+      background-color: #FFF;
+    }
+    &-square {
+      &:after {
+        .top-line(@line-color, 5);
+        top: 0;
+      }
+      &:before {
+        .bottom-line(@line-color, 5);
+      }
+      > span {
+        &:last-child {
+          &:after {
+            .right-line(@line-color, 5);
+          }
+        }
+        &:first-child {
+          &:before {
+            .left-line(@line-color, 5);
+          }
+        }
+      }
+    }
+    &-circle {
+      > span {
+        border-radius: 100px;
+        display: block;
+        background-color: #F5F5F5;
+      }
+    }
+  }
+}
+

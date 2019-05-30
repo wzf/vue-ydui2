@@ -1,0 +1,93 @@
+@import "../common/variables";
+@import "../common/mixins";
+
+.@{css-prefix} {
+  &-timeline {
+    background-color: #fff;
+    font-size: 13px;
+    color: #6e6e6e;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    &:after {
+      .top-line(@line-color);
+    }
+
+    &-content {
+      margin-left: 16px;
+      border-left: 1px solid #E4E5E9;
+    }
+
+    &-item,
+    &-custom-item {
+      padding: 16px 12px 16px 0;
+      margin-left: 16px;
+      position: relative;
+      &:not(:last-child):after {
+        .bottom-line(@line-color);
+      }
+
+      .@{css-prefix}-timeline-icon {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: -16px;
+        display: block;
+        top: 19px;
+        transform: translate(-50%, 0);
+      }
+
+      &:first-child {
+        margin-top: 16px;
+        padding-top: 0;
+        color: #000;
+        > .@{css-prefix}-timeline-icon {
+          top: 3px;
+        }
+      }
+
+      &:last-child:before {
+        content: '';
+        width: 1px;
+        height: 100%;
+        background-color: #FFF;
+        position: absolute;
+        left: -17px;
+        top: 19px;
+      }
+    }
+
+    &-item {
+      .@{css-prefix}-timeline-icon {
+        width: 8px;
+        height: 8px;
+        border-radius: 99px;
+        background-color: #E4E5E9;
+      }
+      &:first-child {
+        > .@{css-prefix}-timeline-icon {
+          background-color: #f23030;
+          width: 10px;
+          height: 10px;
+        }
+        &:before {
+          content: '';
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          z-index: 0;
+          top: 0;
+          left: -24px;
+          background-color: #FBBFBF;
+          border-radius: 99px;
+        }
+      }
+    }
+
+    &-custom-item {
+      &:first-child > .@{css-prefix}-timeline-icon {
+        top: 0;
+      }
+    }
+  }
+}

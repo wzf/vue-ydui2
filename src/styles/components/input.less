@@ -1,0 +1,83 @@
+@import "../common/variables";
+@import "../common/mixins";
+
+.@{css-prefix} {
+  &-input {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+
+    > input {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+      font-size: inherit;
+      &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+      }
+    }
+
+    &-clear,
+    &-error,
+    &-warn,
+    &-password,
+    &-success {
+      display: flex;
+      align-items: center;
+      &:after {
+        font-family: @iconfont-inlay;
+      }
+    }
+
+    &-clear {
+      height: 100%;
+      padding-right: .15rem;
+      padding-left: .2rem;
+    }
+
+    &-clear {
+      &:after {
+        content: '\E60C';
+        color: #B2B2B2;
+        font-size: .3rem;
+      }
+    }
+    &-error {
+      &:after {
+        content: '\E614';
+        color: #F43530;
+        font-size: .4rem;
+      }
+    }
+
+    &-warn {
+      &:after {
+        content: '\E614';
+        color: #10AEFF;
+        font-size: .4rem;
+      }
+    }
+
+    &-success {
+      &:after {
+        content: '\E601';
+        color: #09BB07;
+        font-size: .4rem;
+      }
+    }
+
+    &-password {
+      &:after {
+        content: '\E77E';
+        color: #B2B2B2;
+        font-size: .45rem;
+      }
+      &-open:after {
+        content: '\E77D';
+        color: #434343;
+      }
+    }
+  }
+}

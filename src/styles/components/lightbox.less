@@ -1,0 +1,103 @@
+@import "../common/variables";
+@import "../common/mixins";
+
+.@{css-prefix} {
+  &-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: @base-zindex * 1500 + 2;
+    background-color: rgba(0, 0, 0, 1);
+
+    &-head {
+      display: flex;
+      color: #FFF;
+      height: .9rem;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: @base-zindex * 1500 + 3;
+      background-color: rgba(0, 0, 0, 0.3);
+      transform: translate(0, 0);
+      transition: transform .2s;
+      justify-content: space-between;
+      > span {
+        font-size: .24rem;
+        padding-left: .24rem;
+      }
+      > a {
+        padding-right: .24rem;
+        font-size: 13px;
+      }
+    }
+
+    &-img {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      will-change: opacity;
+      transform-origin: center center;
+      transition: cubic-bezier(.4, 0, .22, 1);
+    }
+
+    &-foot {
+      transform: translate(0, 0);
+      transition: transform .2s;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      color: #fff;
+      z-index: @base-zindex * 1500 + 2;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: .24rem;
+    }
+
+    &-scroller {
+      -webkit-overflow-scrolling: touch;
+      max-height: 2rem;
+      overflow-y: auto;
+      line-height: .34rem;
+    }
+
+    &-up-hide {
+      transform: translate(0, -100%);
+    }
+
+    &-down-hide {
+      transform: translate(0, 100%);
+    }
+
+    &-loading {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 0;
+      margin-left: -15px;
+      margin-top: -15px;
+    }
+
+    &-tip {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, .85);
+      z-index: @base-zindex * 1500 + 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      > img {
+        width: 2.4rem;
+      }
+    }
+  }
+}

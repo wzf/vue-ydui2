@@ -1,0 +1,108 @@
+@import "../common/variables";
+@import "../common/mixins";
+
+.@{css-prefix} {
+  &-tab {
+    &-box {
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    &-nav-nomal {
+      .yd-tab-nav {
+        display: flex;
+        .yd-tab-nav-item {
+          width: 1%;
+          flex: 1;
+        }
+      }
+    }
+
+    &-nav-scoll {
+      .yd-tab-nav {
+        .yd-tab-nav-item {
+          padding: 0 20px;
+          display: inline-block;
+        }
+      }
+    }
+
+    &-nav {
+      position: relative;
+      z-index: 0;
+
+      &:after {
+        .bottom-line(currentColor, 3);
+      }
+
+      &-item {
+        text-align: center;
+        height: 100%;
+        display: block;
+        position: relative;
+
+        &-label {
+          color: inherit;
+          display: inline-block;
+          position: relative;
+        }
+      }
+
+      .@{css-prefix}-tab-active {
+        color: currentColor;
+        &:before {
+          content: '';
+          width: 70%;
+          height: 2px;
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          margin-left: -35%;
+          z-index: 4;
+          background-color: currentColor;
+        }
+      }
+    }
+
+    &-panel {
+      position: relative;
+      overflow: hidden;
+
+      &-item {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        transform: translateX(-100%);
+
+        &.@{css-prefix}-tab-active {
+          position: relative;
+          transition: transform .15s;
+          transform: translateX(0);
+
+          & ~ .@{css-prefix}-tab-panel-item {
+            transform: translateX(100%);
+          }
+        }
+      }
+    }
+
+    &-badge {
+      position: absolute;
+      top: 2px;
+      z-index: 9;
+      line-height: 0;
+    }
+
+    &-dot {
+      position: absolute;
+      top: -10px;
+      > i {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 100px;
+      }
+    }
+  }
+}

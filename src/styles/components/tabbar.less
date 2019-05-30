@@ -1,0 +1,82 @@
+@import "../common/variables";
+@import "../common/mixins";
+
+.@{css-prefix} {
+  &-tabbar {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    &:after {
+      .top-line(currentColor);
+    }
+
+    &-fixed {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: @base-zindex * 100;
+    }
+
+    &-item {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-active {
+      color: inherit;
+      .@{css-prefix}-tabbar-icon {
+        color: inherit;
+      }
+    }
+
+    &-badge {
+      position: absolute;
+      top: -.1rem;
+      left: 100%;
+      z-index: 999;
+      margin-left: -.15rem;
+    }
+
+    &-dot {
+      display: block;
+      width: 8px;
+      height: 8px;
+      background-color: #EF4F4F;
+      border-radius: 50%;
+      position: absolute;
+      border: 1px solid #FFF;
+      top: 0;
+      left: 100%;
+      z-index: 999;
+      margin-left: -4px;
+    }
+
+    &-icon {
+      display: flex;
+      align-items: center;
+      position: relative;
+      img {
+        height: inherit;
+      }
+    }
+
+    &-txt {
+      display: inline-block;
+      font-size: inherit;
+    }
+
+    &-other {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      img {
+        display: block;
+      }
+    }
+  }
+}

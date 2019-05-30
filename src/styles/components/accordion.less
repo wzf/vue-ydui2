@@ -1,0 +1,67 @@
+@import "../common/variables";
+@import "../common/mixins";
+
+.@{css-prefix} {
+  &-accordion {
+    background-color: #fff;
+  }
+
+  &-accordion-head {
+    display: flex;
+    align-items: center;
+    position: relative;
+    user-select: none;
+    padding: 0 .24rem;
+    overflow: hidden;
+    &:after {
+      .bottom-line(@line-color);
+    }
+    &-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    &-arrow {
+      overflow: hidden;
+      height: 100%;
+      min-height: 1rem;
+      display: flex;
+      align-items: center;
+      &:after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 7px solid #A0A0A0;
+        display: block;
+        transition: transform .1s linear;
+        transform: rotate(-180deg);
+      }
+      &.@{css-prefix}-accordion-rotated:after {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  &-accordion-title {
+    min-height: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: .28rem;
+    color: #444;
+    &-full {
+      flex: 1;
+    }
+  }
+
+  &-accordion-content {
+    position: relative;
+    overflow: hidden;
+    transition: height .1s linear;
+    &:after {
+      .bottom-line(@line-color);
+    }
+  }
+}
+
