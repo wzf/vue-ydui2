@@ -22,10 +22,11 @@ Vue.use(YDUI);
 
 ## 组件计划
 
-- ~~ 画板`yd-canvasboard`（新增）~~
-- ~~ 选择器`yd-picker`（新增）~~
-- ~~ 时间选择`datetime`（修改）~~
-- ~~ 大图预览`imagepreview`（新增）~~
+~~ - 画板`yd-canvasboard`（新增）~~
+~~ - 选择器`yd-picker`（新增）~~
+~~ - 时间选择`datetime`（修改）~~
+~~ - 大图预览`imagepreview`（新增）~~
+
 - 图片选择`yd-filepicker`（新增）
 - 进度条`yd-progressbar`（升级）
 - 分割线`yd-divider`（新增）
