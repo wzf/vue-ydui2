@@ -22,9 +22,11 @@ Vue.use(YDUI);
 
 ## 组件计划
 
-- 画板`yd-canvasboard`（新增）
-- 选择器`yd-picker`（新增）
-- 图片选择组件`yd-filepicker`（新增）
+- ~~ 画板`yd-canvasboard`（新增）~~
+- ~~ 选择器`yd-picker`（新增）~~
+- ~~ 时间选择`datetime`（修改）~~
+- ~~ 大图预览`imagepreview`（新增）~~
+- 图片选择`yd-filepicker`（新增）
 - 进度条`yd-progressbar`（升级）
 - 分割线`yd-divider`（新增）
 - 下拉菜单`yd-dropdown`（新增）
@@ -48,12 +50,12 @@ Vue.use(YDUI);
 
 ### datetime
 
-**已完成**
+**已完成** <br/>
 在原来基础上，添加了一个`datetime_full`类型，对应的时间组件是`年 | 月 | 日 | 时 | 分 | 秒`
 
 ### imagepreview
 
-**已完成**
+**已完成** <br/>
 通过 api 方式开启大图预览<br/>
 
 > `Vue.use(YDUI);`执行以后，给 Vue.prototype 绑定了一个方法\$imagePreview，所以可以在 vue 组件内直接调用
@@ -75,7 +77,7 @@ this.$imagePreview({images, index});
 
 ### canvasboard（手写板）
 
-**已完成**
+**已完成** <br/>
 业务中，为了解决“手写签名”而增加的这个组件<br/>
 使用方式，具体参照 example/routers/canvasboard.vue
 
@@ -95,7 +97,7 @@ this.$imagePreview({images, index});
         ref="previewCanvas">
 </canvas>
 
-// 获取图像并尽心二次处理
+// 获取图像并进行二次处理
 _clickGetImage() {
       const imageData = this.$refs.canvasboard.imageBase64Data();
       let image = new Image();
@@ -131,9 +133,9 @@ _clickGetImage() {
 
 ### picker（选择器）
 
-**已完成**
+**已完成** <br/>
 （这个组件是从 datetime 组件中剥离出来的）<br/>
-提供一组选项，要求选项包括 value、name 两个值<br/>
+提供一组选项，其中选项必须包括 value、name 两个值，value 是业务值，name 是显示值<br/>
 使用方式，具体参照 example/routers/picker.vue
 
 ```
