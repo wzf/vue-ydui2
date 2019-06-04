@@ -74,6 +74,8 @@ export default {
   watch: {
     show: function(value) {
       if (value && this.scroller) {
+        // 2019-06-04 [bug修复] 属性options改变时，需要重新组织scroller，不然会因为数据不一致，而造成无法滑动
+        this.render();
         this.scroller.select(this.default, false);
       }
     }
@@ -140,6 +142,7 @@ export default {
     this.$nextTick(this.render);
   },
   beforeDestroy() {
+    isIOS && pageScroll.unlock();
     this.scroller = null;
   }
 };

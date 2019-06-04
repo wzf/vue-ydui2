@@ -22,18 +22,7 @@ export default {
   data() {
     return {
       show: false,
-      options: [
-        { value: 'beijing', name: '北京' },
-        { value: 'shanghai', name: '上海' },
-        { value: 'guangzhou', name: '广州' },
-        { value: 'shenzhen', name: '深圳' },
-        { value: 'hangzhou', name: '杭州' },
-        { value: 'xiongan', name: '雄安' },
-        { value: 'suzhou', name: '苏州' },
-        { value: 'jinan', name: '济南' },
-        { value: 'shouguang', name: '寿光' },
-        { value: 'xian', name: '西安' }
-      ],
+      options: [],
       city: '',
       cityName: ''
     };
@@ -45,6 +34,18 @@ export default {
     _doLoadData() {
       // 假设这里有api请求
       setTimeout(() => {
+        this.options = [
+          { value: 'beijing', name: '北京' },
+          { value: 'shanghai', name: '上海' },
+          { value: 'guangzhou', name: '广州' },
+          { value: 'shenzhen', name: '深圳' },
+          { value: 'hangzhou', name: '杭州' },
+          { value: 'xiongan', name: '雄安' },
+          { value: 'suzhou', name: '苏州' },
+          { value: 'jinan', name: '济南' },
+          { value: 'shouguang', name: '寿光' },
+          { value: 'xian', name: '西安' }
+        ];
         this.city = 'shouguang';
         const index = this.options.findIndex(i => i.value == this.city);
         this.cityName = this.options[index].name;
