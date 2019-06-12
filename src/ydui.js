@@ -1,6 +1,6 @@
 import './styles/base.less';
 
-import { Confirm, Alert, Toast, Notify, Loading } from './components/dialog';
+import { Confirm, Alert, Toast, Notify, Loading, ConfirmView } from './components/dialog';
 import { Layout } from './components/layout';
 import { Button, ButtonGroup } from './components/button';
 import { NavBar, NavBarBackIcon, NavBarNextIcon } from './components/navbar';
@@ -133,6 +133,7 @@ const install = function(Vue) {
   Vue.component(PreviewItem.name, PreviewItem);
   Vue.component(CanvasBoard.name, CanvasBoard); //canvas画板
   Vue.component(Picker.name, Picker); //canvas画板
+  Vue.component(ConfirmView.name, ConfirmView); //确认
 
   Vue.prototype.$dialog = {
     confirm: Confirm,

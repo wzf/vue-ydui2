@@ -4,10 +4,6 @@ import Toast from './src/toast';
 import Notify from './src/notify';
 import Loading from './src/loading';
 
-export {
-    Confirm,
-    Alert,
-    Toast,
-    Notify,
-    Loading
-};
+import ConfirmView from './src/confirm/confirm.vue';
+
+export { Confirm, Alert, Toast, Notify, Loading, ConfirmView };
