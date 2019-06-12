@@ -133,7 +133,7 @@ const install = function(Vue) {
   Vue.component(PreviewItem.name, PreviewItem);
   Vue.component(CanvasBoard.name, CanvasBoard); //canvas画板
   Vue.component(Picker.name, Picker); //canvas画板
-  Vue.component(ConfirmView.name, ConfirmView); //确认
+  Vue.component(ConfirmView.name, ConfirmView); //弹框，进行[确认]操作
 
   Vue.prototype.$dialog = {
     confirm: Confirm,
