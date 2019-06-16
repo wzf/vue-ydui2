@@ -16,6 +16,14 @@ ToastConstructor.prototype.closeToast = function() {
   typeof this.callback === 'function' && this.callback();
 };
 
+let timer;
+
+// 点击隐藏
+instance.clickIconClose = () => {
+  clearTimeout(timer);
+  instance.closeToast();
+};
+
 const Toast = (options = {}) => {
   instance.mes = options.mes;
   instance.icon = options.icon;
@@ -26,16 +34,14 @@ const Toast = (options = {}) => {
 
   pageScroll.lock();
 
-  const timer = setTimeout(() => {
-    if (timer) return;
+  if (timer) {
     clearTimeout(timer);
+    timer = null;
+  }
+
+  timer = setTimeout(() => {
     instance.closeToast();
   }, instance.timeout + 100);
-
-  instance.clickIconClose = () => {
-    clearTimeout(timer);
-    instance.closeToast();
-  };
 };
 
 export default Toast;
