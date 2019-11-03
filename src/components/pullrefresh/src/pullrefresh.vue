@@ -87,12 +87,13 @@
                 const _key = 'PULLREFRESH-TIP';
                 const storage = window.localStorage;
 
-                if (storage.getItem(_key) != 1) {
-                    this.showHelpTag = true;
-                    setTimeout(() => {
-                        this.showHelpTag = false;
-                    }, 5000);
-                }
+                // wzf 2019-11-03 去掉提示
+                // if (storage.getItem(_key) != 1) {
+                //     this.showHelpTag = true;
+                //     setTimeout(() => {
+                //         this.showHelpTag = false;
+                //     }, 5000);
+                // }
                 storage.setItem(_key, 1);
             },
             bindEvents() {
