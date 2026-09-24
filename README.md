@@ -1,3 +1,5 @@
+
+
 # vue-ydui2
 
 特别说明：这是基于 vue-ydui 组件升级的 UI 库，因为作者实在是太懒了，许久都不更新。<br/>
@@ -8,7 +10,7 @@
 工程目录下面执行，引入组件
 
 ```
-npm i --save https://github.com/wzf/vue-ydui2
+npm i --save https://github.com/wzf/vue-ydui2.git
 ```
 
 main.js 里面 import 并安装
